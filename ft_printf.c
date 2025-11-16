@@ -6,12 +6,10 @@
 /*   By: ayamhija <ayamhija@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 16:04:57 by ayamhija          #+#    #+#             */
-/*   Updated: 2025/11/16 21:51:26 by ayamhija         ###   ########.fr       */
+/*   Updated: 2025/11/16 22:01:48 by ayamhija         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-#include <stdio.h>
 #include "ft_printf.h"
 
 static void	ft_print(const char *format, va_list args, int *count)
@@ -65,10 +63,3 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-
-// int	main()
-// {
-// 	int a = ft_printf("%d\n", -1);
-// 	int b = printf("%d\n", -1);
-// 	printf("%d %d\n", a, b);
-// }

@@ -1,6 +1,6 @@
 # -*- Makefile -*-
 
-SRC = ft_printf.c ft_utils.c 
+SRC = ft_printf.c ft_utils.c ft_putnbr.c 
 
 OBJS = ${SRC:.c=.o}
 
