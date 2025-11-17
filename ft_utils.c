@@ -6,7 +6,7 @@
 /*   By: ayamhija <ayamhija@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 16:17:43 by ayamhija          #+#    #+#             */
-/*   Updated: 2025/11/16 22:01:05 by ayamhija         ###   ########.fr       */
+/*   Updated: 2025/11/17 19:06:50 by ayamhija         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ size_t	ft_strlen(const char *s)
 
 void	ft_putstr(const char *s, int *count)
 {
+	if (s == NULL)
+	{
+		write(1, "(null)", 6);
+		*count += 6;
+		return ;
+	}
 	write(1, s, ft_strlen(s));
 	(*count) += ft_strlen(s);
 }
