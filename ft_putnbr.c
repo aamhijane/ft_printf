@@ -32,6 +32,6 @@ void	ft_putnbr(int num, int *count)
 void	ft_putnbr_unsigned(unsigned int num, int *count)
 {
 	if (num > 9)
-		ft_putnbr(num / 10, count);
+		ft_putnbr_unsigned(num / 10, count);
 	ft_putchar((num % 10) + '0', &(*count++));
 }

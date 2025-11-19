@@ -6,7 +6,7 @@
 /*   By: ayamhija <ayamhija@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 16:04:57 by ayamhija          #+#    #+#             */
-/*   Updated: 2025/11/17 19:10:36 by ayamhija         ###   ########.fr       */
+/*   Updated: 2025/11/19 16:30:49 by ayamhija         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,21 +44,22 @@ int	ft_printf(const char *format, ...)
 
 	count = 0;
 	va_start(args, format);
-	if (format != NULL)
+	if (format == NULL)
+		return (-1);
+	while (*format)
 	{
-		while (*format)
+		if (*(format + 1) == '\0')
 		{
-			if (*(format + 1) == '\0')
-			{
-				ft_putchar(*format, &count);
-				break ;
-			}
 			if (*format == '%')
-				ft_print(++format, args, &count);
-			else
-				ft_putchar(*format, &count);
-			format++;
+				return (-1);
+			ft_putchar(*format, &count);
+			break ;
 		}
+		if (*format == '%')
+			ft_print(++format, args, &count);
+		else
+			ft_putchar(*format, &count);
+		format++;
 	}
 	va_end(args);
 	return (count);
